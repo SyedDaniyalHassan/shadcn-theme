@@ -1,0 +1,266 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+  /* Twenty.com Color Palette - Light Theme */
+  --background: #F7F7F7;
+  /* App background - light gray */
+  --foreground: oklch(0.26 0 0);
+  /* #333333 - Dark gray text */
+  --card: oklch(0.94 0 0);
+  /* #F0F0F0 - Gray cards (distinct from page background) */
+  --card-foreground: oklch(0.26 0 0);
+  /* #333333 - Dark text on cards */
+  --popover: oklch(0.94 0 0);
+  /* #F0F0F0 - Gray popovers */
+  --popover-foreground: oklch(0.26 0 0);
+  /* #333333 - Dark text */
+  --primary: oklch(0.26 0 0);
+  /* #333333 - Primary actions */
+  --primary-foreground: oklch(1 0 0);
+  /* White text on primary */
+  --secondary: oklch(0.96 0 0);
+  /* Light gray for secondary */
+  --secondary-foreground: oklch(0.26 0 0);
+  /* Dark text on secondary */
+  --muted: oklch(0.96 0 0);
+  /* Light gray for muted elements */
+  --muted-foreground: oklch(0.5 0 0);
+  /* #717171 - Muted text */
+  --accent: oklch(0.96 0 0);
+  /* Light gray accent */
+  --accent-foreground: oklch(0.26 0 0);
+  /* Dark text on accent */
+  --destructive: oklch(0.577 0.245 27.325);
+  /* Keep existing red */
+  --border: oklch(0.93 0 0);
+  /* #EBEBEB - Subtle borders */
+  --input: oklch(0.93 0 0);
+  /* #EBEBEB - Input borders */
+  --ring: oklch(0.26 0 0);
+  /* #333333 - Focus ring */
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.94 0 0);
+  /* #F0F0F0 - Gray sidebar (distinct from page background) */
+  --sidebar-foreground: oklch(0.26 0 0);
+  /* #333333 - Dark text */
+  --sidebar-primary: oklch(0.26 0 0);
+  /* #333333 - Active items */
+  --sidebar-primary-foreground: oklch(1 0 0);
+  /* White text */
+  --sidebar-accent: oklch(0.96 0 0);
+  /* Light gray hover */
+  --sidebar-accent-foreground: oklch(0.26 0 0);
+  /* Dark text on hover */
+  --sidebar-border: oklch(0.93 0 0);
+  /* #EBEBEB - Sidebar border */
+  --sidebar-ring: oklch(0.26 0 0);
+  /* Dark focus ring */
+}
+
+.dark {
+  /* Twenty.com Dark Theme - maintaining minimal aesthetic */
+  --background: oklch(0.15 0 0);
+  /* Very dark gray, not pure black */
+  --foreground: oklch(0.95 0 0);
+  /* Light gray text */
+  --card: oklch(0.22 0 0);
+  /* Slightly lighter than background */
+  --card-foreground: oklch(0.95 0 0);
+  /* Light text on cards */
+  --popover: oklch(0.22 0 0);
+  /* Match card */
+  --popover-foreground: oklch(0.95 0 0);
+  /* Light text */
+  --primary: oklch(0.92 0 0);
+  /* Light gray for primary */
+  --primary-foreground: oklch(0.15 0 0);
+  /* Dark text on primary */
+  --secondary: oklch(0.28 0 0);
+  /* Medium dark gray */
+  --secondary-foreground: oklch(0.95 0 0);
+  /* Light text */
+  --muted: oklch(0.28 0 0);
+  /* Medium dark gray */
+  --muted-foreground: oklch(0.65 0 0);
+  /* Muted light gray */
+  --accent: oklch(0.28 0 0);
+  /* Medium dark gray */
+  --accent-foreground: oklch(0.95 0 0);
+  /* Light text */
+  --destructive: oklch(0.704 0.191 22.216);
+  /* Keep existing red */
+  --border: oklch(1 0 0 / 8%);
+  /* Very subtle borders */
+  --input: oklch(1 0 0 / 12%);
+  /* Subtle input borders */
+  --ring: oklch(0.65 0 0);
+  /* Medium gray focus ring */
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.18 0 0);
+  /* Slightly lighter than background */
+  --sidebar-foreground: oklch(0.95 0 0);
+  /* Light text */
+  --sidebar-primary: oklch(0.92 0 0);
+  /* Light gray active */
+  --sidebar-primary-foreground: oklch(0.15 0 0);
+  /* Dark text on active */
+  --sidebar-accent: oklch(0.28 0 0);
+  /* Medium dark hover */
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  /* Light text on hover */
+  --sidebar-border: oklch(1 0 0 / 8%);
+  /* Subtle sidebar border */
+  --sidebar-ring: oklch(0.65 0 0);
+  /* Medium gray focus */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    font-size: 13px;
+    /* Twenty.com base font size for compact layout */
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Typography refinements for Twenty.com style */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    /* Semi-bold for headings */
+  }
+
+  /* Subtle shadows for cards and elevated elements */
+  .shadow-sm {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.04);
+  }
+
+  .shadow {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-md {
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* Ensure consistent font rendering across different DPI levels */
+@media (-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+/* Fix for sidebar "none" mode height issue */
+.sidebar-none-mode [data-slot="sidebar"] {
+  height: 100vh !important;
+  min-height: 100vh !important;
+}
+
+/* Fix for right-side inset variant support */
+@media (min-width: 768px) {
+
+  /* Right sidebar inset variant - margin adjustments */
+  [data-side="right"][data-variant="inset"]~[data-slot="sidebar-inset"] {
+    margin-right: 0 !important;
+  }
+
+  /* Right sidebar inset variant - collapsed state margin */
+  [data-side="right"][data-variant="inset"][data-state="collapsed"]~[data-slot="sidebar-inset"] {
+    margin-right: 0.5rem !important;
+  }
+}
+
+/* Skeleton background color */
+[data-slot="skeleton"] {
+  background-color: #F7F7F7 !important;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Logo carousel animation */
+@keyframes logo-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-144rem);
+    /* 12 items * 12rem = 144rem */
+  }
+}
+
+.animate-logo-scroll {
+  animation: logo-scroll 30s linear infinite;
+}
+
+.animate-logo-scroll:hover {
+  animation-play-state: paused;
+}
